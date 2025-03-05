@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "PT Sans", sans-serif;
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f4f4f4;
+      }
+
+      .cta-button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+
+        font-size: 18px;
+        cursor: pointer;
+
+        width: 279px;
+        height: 47px;
+
+        border-radius: 8px;
+
+        transition: background 0.3s ease;
+      }
+
+      .cta-button:hover {
+        background-color: #0056b3;
+      }
+
+      .popup {
+        display: block;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        width: 90%;
+        max-width: 800px;
+        border-radius: 12px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        z-index: 1000;
+      }
+
+      .overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 999;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1001;
+        color: #000;
+      }
+
+      .popup-container {
+        display: flex;
+        min-height: 500px;
+      }
+
+      .popup-image {
+        flex: 0 0 45%;
+        display: flex;
+        align-items: stretch;
+      }
+
+      .popup-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .popup-text {
+        flex: 1;
+        padding: 40px 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .popup-text h2 {
+        font-size: 22px;
+        font-weight: 400;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 15px;
+      }
+
+      .highlight {
+        color: #df720c;
+        font-weight: bold;
+      }
+
+      .benefits-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .benefit {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+      }
+
+      .benefit-icon {
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+      }
+
+      .benefit-icon img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .benefit-content {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .benefit-content p {
+        margin: 0;
+        padding-bottom: 15px;
+        font-size: 15px;
+        line-height: 21px;
+      }
+
+      .benefit-text-heading {
+        font-weight: 700;
+        display: block;
+      }
+
+      .cta-popup {
+        width: 100%;
+        background-color: #df720c;
+        color: white;
+
+        width: 279px;
+        height: 47px;
+
+        border-radius: 8px;
+        border: none;
+        padding: 15px;
+        font-size: 18px;
+        cursor: pointer;
+        border-radius: 8px;
+        margin-top: auto;
+        transition: background-color 0.3s ease;
+      }
+
+      .cta-popup:hover {
+        background-color: #e65c00;
+      }
+
+      .button {
+        text-align: center;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .login-text {
+        margin: 15px 0 0;
+        text-align: center;
+        font-size: 14px;
+      }
+
+      .login-text a {
+        text-decoration: underline;
+        color: inherit;
+        font: bold;
+      }
+
+      @media (max-width: 767px) {
+        .popup {
+          width: 90%;
+          height: 95%;
+          max-width: 340px;
+          border-radius: 12px;
+          overflow-y: auto;
+        }
+
+        .popup-container {
+          flex-direction: column;
+          min-height: auto;
+        }
+
+        .popup-image {
+          display: flex;
+          flex: 0 0 auto;
+          height: 91px;
+          overflow: hidden;
+          position: relative;
+          border-top-left-radius: 12px;
+          border-top-right-radius: 12px;
+        }
+
+        .popup-image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center top;
+        }
+
+        .popup-text {
+          padding: 20px 20px 30px;
+          gap: 15px;
+        }
+
+        .popup-text h2 {
+          margin-bottom: 10px;
+          font-family: PT Sans;
+          font-weight: 700;
+          font-size: 22px;
+          line-height: 28px;
+          letter-spacing: 0px;
+          text-align: center;
+        }
+
+        .benefits-container {
+          gap: 10px;
+        }
+
+        .benefit {
+          gap: 12px;
+        }
+
+        .benefit-icon {
+          width: 20px;
+          height: 20px;
+          margin-top: 2px;
+        }
+
+        .benefit-content p {
+          font-size: 14px;
+          line-height: 1.4;
+          padding-bottom: 0;
+        }
+
+        .benefit-text-heading {
+          font-size: 15px;
+          margin-bottom: 2px;
+        }
+
+        .cta-popup {
+          width: 100%;
+          padding: 12px;
+          font-size: 16px;
+          margin-top: 10px;
+        }
+        /* 
+  .button {
+    margin-top: px;
+  } */
+
+        .login-text {
+          margin-top: 10px;
+          font-size: 13px;
+        }
+
+        .close-btn {
+          top: 10px;
+          right: 10px;
+          font-size: 20px;
+        }
+      }
+    </style>
+    <title>Mable</title>
+  </head>
+  <body>
+    <button class="cta-button" onclick="openPopup()">Click Me</button>
+
+    <div class="overlay" id="overlay" onclick="closePopup()"></div>
+
+    <div class="popup" id="popup">
+      <button class="close-btn" onclick="closePopup()">×</button>
+
+      <div class="popup-container">
+        <div class="popup-image">
+          <img
+            src="https://optiabtests.s3.eu-west-2.amazonaws.com/Training+assignments/MabPopUp.jpg"
+            alt="User Image"
+          />
+        </div>
+
+        <div class="popup-text">
+          <h2>
+            Join Mable for <span class="highlight">FREE</span> to view <br />
+            support workers' profiles
+          </h2>
+
+          <div class="benefits-container">
+            <div class="benefit">
+              <div class="benefit-icon">
+                <img
+                  src="https://optiabtests.s3.eu-west-2.amazonaws.com/Training+assignments/checkIcon.svg"
+                  alt="Check Icon"
+                />
+              </div>
+              <div class="benefit-content">
+                <span class="benefit-text-heading">Peace of mind</span>
+                <p>
+                  Each independent support worker has been <br />
+                  verified with both police checks and references.
+                </p>
+              </div>
+            </div>
+
+            <div class="benefit">
+              <div class="benefit-icon">
+                <img
+                  src="https://optiabtests.s3.eu-west-2.amazonaws.com/Training+assignments/checkIcon.svg"
+                  alt="Check Icon"
+                />
+              </div>
+              <div class="benefit-content">
+                <span class="benefit-text-heading">Better value support</span>
+                <p>
+                  Because we're online, our costs are lower. We pass <br />the
+                  savings onto you!
+                </p>
+              </div>
+            </div>
+
+            <div class="benefit">
+              <div class="benefit-icon">
+                <img
+                  src="https://optiabtests.s3.eu-west-2.amazonaws.com/Training+assignments/checkIcon.svg"
+                  alt="Check Icon"
+                />
+              </div>
+              <div class="benefit-content">
+                <span class="benefit-text-heading">Freedom of choice</span>
+                <p>
+                  Enjoy the freedom and flexibility that comes with <br />having
+                  a direct relationship with your support <br />
+                  team.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="button">
+            <button class="cta-popup">Let's get started</button>
+          </div>
+          <p class="login-text">
+            Already have an account?
+            <a href="https://www.google.com">Login here</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openPopup() {
+        document.getElementById("popup").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
+      }
+
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

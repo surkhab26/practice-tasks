@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.cdnfonts.com/css/samsung-sharp-sans"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.cdnfonts.com/css/samsungone" rel="stylesheet" />
+    <style>
+      * {
+        font-family: "Samsung Sharp Sans", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fff;
+      }
+
+      .header {
+        width: 100%;
+        height: 64px;
+        border-bottom: 1px solid #dddddd;
+        display: flex;
+        /* justify-items: center;
+  align-items: center; */
+        bottom: 0;
+        position: sticky;
+        justify-content: center;
+        padding: 10px;
+      }
+
+      .samsung-logo {
+        width: 154px;
+        height: 41px;
+        top: 12px;
+        left: 612px;
+      }
+
+      .main-container {
+        width: 100%;
+
+        margin: auto;
+      }
+
+      .macif-logo {
+        text-align: center;
+      }
+
+      .macif-logo-image {
+        width: 273px;
+        max-width: 100%;
+      }
+
+      .middle-heading {
+        text-align: center;
+        font-weight: 700;
+        font-size: 28px;
+        margin: 20px 0;
+        padding: 0 10px;
+      }
+
+      .middle-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 5%;
+
+        width: 100%;
+
+        gap: 40px;
+      }
+
+      .text-content-left-1 {
+        flex: 1;
+        padding-left: 4%;
+      }
+
+      .middle-content-heading {
+        font-weight: 700;
+        font-size: 24px;
+      }
+
+      .middle-content-text {
+        font-family: "SamsungOne", sans-serif;
+        font-size: 18px;
+        margin: 10px 0;
+      }
+
+      .button {
+        width: 229px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: #1428a0;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .button:hover {
+        background-color: #0f1e70;
+      }
+
+      .samsung-logo-container {
+        flex: 1;
+        text-align: right;
+      }
+
+      .product-images {
+        width: 456px;
+        height: 352px;
+        top: 233px;
+        left: 984px;
+        justify-content: right;
+      }
+
+      .footer {
+        background-color: #f4f4f4;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 30px;
+        /* margin-top: 6%; */
+        gap: 10px;
+      }
+
+      .footer-containers {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        width: 22%;
+        gap: 3%;
+        min-width: 180px;
+        /* padding-left: 4%; */
+        padding-bottom: 2%;
+        flex-direction: row;
+        text-align: left;
+      }
+
+      .footer-images img {
+        width: 35px;
+        height: 35px;
+      }
+
+      .footer-containers-subtext-1 {
+        font-weight: 700;
+        font-size: 16px;
+        font-family: SamsungOne;
+
+        line-height: 18.75px;
+        letter-spacing: 0%;
+      }
+
+      .footer-containers-subtext-2 {
+        font-weight: 400;
+        font-family: SamsungOne;
+        font-size: 16px;
+        line-height: 18.75px;
+        letter-spacing: 0%;
+
+        font-size: 14px;
+      }
+
+      @media screen and (max-width: 1080px) {
+        .main-container {
+          max-width: 100%;
+        }
+
+        .middle-content {
+          max-width: 100%;
+        }
+        /* .footer {
+    margin-top: 6% !important;
+  } */
+      }
+
+      @media screen and (max-width: 768px) {
+        .middle-content {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .text-content-left-1 {
+          padding: 10px;
+        }
+
+        .middle-content-heading {
+          font-size: 22px;
+        }
+
+        .middle-content-text {
+          font-size: 16px;
+        }
+
+        .button {
+          width: 80%;
+        }
+
+        .footer-containers {
+          width: 45%;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .middle-heading {
+          font-size: 22px;
+        }
+        .samsung-logo {
+          width: 154px;
+          height: 41px;
+          top: 13px;
+          left: 111px;
+        }
+        .product-images {
+          width: 374.8148193359375px;
+          height: 245px;
+          top: 336px;
+        }
+
+        .middle-content-heading {
+          font-family: Samsung Sharp Sans;
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 25.16px;
+          width: 297px;
+
+          letter-spacing: 0%;
+        }
+
+        .middle-content-text {
+          font-size: 14px;
+        }
+
+        .button {
+          font-size: 14px;
+          height: 35px;
+        }
+
+        .footer {
+          flex-direction: column;
+          align-items: center;
+          padding-bottom: 10px;
+          /* padding-left: 5%; */
+        }
+        .footer-containers-subtext-1 {
+          font-family: SamsungOne;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 16.41px;
+          letter-spacing: 0%;
+        }
+        .footer-containers-subtext-2 {
+          font-family: SamsungOne;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 16.41px;
+          letter-spacing: 0%;
+        }
+
+        .footer-containers {
+          width: 100%;
+        }
+
+        .footer-images img {
+          width: 25px;
+          height: 25px;
+        }
+      }
+      @media screen and (min-width: 2560px) {
+        .main-container {
+          /* max-width: 70%; */
+          margin: auto;
+        }
+
+        .middle-content {
+          max-width: 80%;
+          gap: 60px;
+        }
+
+        .product-images {
+          width: 600px;
+          height: auto;
+        }
+
+        .middle-content-heading {
+          font-size: 30px;
+        }
+
+        .middle-content-text {
+          font-size: 22px;
+        }
+
+        .button {
+          width: 250px;
+          height: 50px;
+          font-size: 18px;
+        }
+
+        .footer {
+          /* padding: 50px; */
+          margin: 1%;
+        }
+
+        .footer-containers {
+          width: 18%;
+        }
+
+        .footer-containers-subtext-1 {
+          font-size: 18px;
+        }
+
+        .footer-containers-subtext-2 {
+          font-size: 16px;
+        }
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <img
+        class="samsung-logo"
+        alt="samsung-logo"
+        src="https://s3-alpha-sig.figma.com/img/4006/c707/0574268d9682c51a43d3a9ae55828d46?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=L35hUtchIfejYDq311IT6TE5ITZCQTJqUkTo0BIC2YjGUJVWsTgZyOYF0QvTPoIOitBIcWjrLKXkQjWvHgHVAzrPz-deifFaPKkImuMc~eF6FscWCEj1QUUlTQyWmF7zaKqhOOSbJTOL2jpuX3vZdkLuGAe-AKmeqszvczNSUcokLEKx6c2yWwZKVmW1nMFBxiaO0NQ7JPHTP5nm5dSB5jrHGYJ3kPDuQNYJ0mItdf~D4mztNz7bFGVpai2MWIreudlIN3Ki-Jq5OCOd24-EVI46oJhG1RTk48ksZngou8aetmUbtZ8V55fqKeJ~oDs6LPeXwe4b3t5QvsOodLiJuA__"
+      />
+    </header>
+
+    <div class="main-container">
+      <div class="macif-logo">
+        <img
+          class="macif-logo-image"
+          src="https://optiabtests.s3.eu-west-2.amazonaws.com/Training+assignments/Macif_Advantages.png"
+          alt="macif-logo"
+        />
+      </div>
+
+      <div class="middle-heading">Oups .. votre session a expiré !</div>
+
+      <div class="middle-content">
+        <div class="text-content-left-1">
+          <h2 class="middle-content-heading">
+            10% de remise sur les produits Samsung
+          </h2>
+          <p class="middle-content-text">Connectez-vous pour en profiter !</p>
+          <button class="button">SE CONNECTER</button>
+        </div>
+        <div class="samsung-logo-container">
+          <img
+            class="product-images"
+            src="https://optiabtests.s3.eu-west-2.amazonaws.com/Training+assignments/Product_image.jpg"
+            alt="product-images"
+          />
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="footer-containers">
+          <div class="footer-images">
+            <img
+              src="https://optiabtests.s3.eu-west-2.amazonaws.com/Training+assignments/icon1.svg"
+              alt="truck-image"
+            />
+          </div>
+          <p class="footer-containers-subtext-1">
+            Livraison et retours gratuits <br />
+            <span class="footer-containers-subtext-2">sous 14 jours</span>
+          </p>
+        </div>
+
+        <div class="footer-containers">
+          <div class="footer-images">
+            <img
+              src="https://optiabtests.s3.eu-west-2.amazonaws.com/Training+assignments/icon2.svg"
+              alt="warranty-image"
+            />
+          </div>
+          <p class="footer-containers-subtext-1">
+            Garantie 2 ans <br />
+            <span class="footer-containers-subtext-2">incluse</span>
+          </p>
+        </div>
+
+        <div class="footer-containers">
+          <div class="footer-images">
+            <img
+              src="https://optiabtests.s3.eu-west-2.amazonaws.com/Training+assignments/icon3.svg"
+              alt="payment-image"
+            />
+          </div>
+          <p class="footer-containers-subtext-1">
+            Paiement en 3 ou 4 fois <br />
+            <span class="footer-containers-subtext-2">Sans frais</span>
+          </p>
+        </div>
+
+        <div class="footer-containers">
+          <div class="footer-images">
+            <img
+              src="https://optiabtests.s3.eu-west-2.amazonaws.com/Training+assignments/icon4.svg"
+              alt="customer-service-image"
+            />
+          </div>
+          <p class="footer-containers-subtext-1">
+            Service client : 0 805 504 504 <br />
+            <span class="footer-containers-subtext-2"
+              >Du lundi au samedi de 9h à 20h</span
+            >
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
