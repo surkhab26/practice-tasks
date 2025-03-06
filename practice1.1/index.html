@@ -27,27 +27,18 @@
 
       .header {
         width: 100%;
-        height: 64px;
         border-bottom: 1px solid #dddddd;
         display: flex;
-        /* justify-items: center;
-  align-items: center; */
-        bottom: 0;
-        position: sticky;
         justify-content: center;
-        padding: 10px;
       }
 
       .samsung-logo {
         width: 154px;
         height: 41px;
-        top: 12px;
-        left: 612px;
       }
 
       .main-container {
-        width: 100%;
-
+        width: 1440px;
         margin: auto;
       }
 
@@ -73,10 +64,8 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 5%;
-
-        width: 100%;
-
+        margin: auto;
+        max-width: 1440px;
         gap: 40px;
       }
 
@@ -120,20 +109,17 @@
       .product-images {
         width: 456px;
         height: 352px;
-        top: 233px;
-        left: 984px;
+
         justify-content: right;
       }
 
       .footer {
         background-color: #f4f4f4;
         width: 100%;
+        padding-top: 20px;
         display: flex;
-        flex-wrap: wrap;
+        padding: 20px;
         justify-content: center;
-        padding: 30px;
-        /* margin-top: 6%; */
-        gap: 10px;
       }
 
       .footer-containers {
@@ -142,9 +128,7 @@
         text-align: center;
         width: 22%;
         gap: 3%;
-        min-width: 180px;
-        /* padding-left: 4%; */
-        padding-bottom: 2%;
+
         flex-direction: row;
         text-align: left;
       }
@@ -175,15 +159,12 @@
 
       @media screen and (max-width: 1080px) {
         .main-container {
-          max-width: 100%;
+          max-width: 75%;
         }
 
         .middle-content {
-          max-width: 100%;
+          max-width: 75%;
         }
-        /* .footer {
-    margin-top: 6% !important;
-  } */
       }
 
       @media screen and (max-width: 768px) {
@@ -208,10 +189,6 @@
         .button {
           width: 80%;
         }
-
-        .footer-containers {
-          width: 45%;
-        }
       }
 
       @media screen and (max-width: 480px) {
@@ -221,13 +198,10 @@
         .samsung-logo {
           width: 154px;
           height: 41px;
-          top: 13px;
-          left: 111px;
         }
         .product-images {
           width: 374.8148193359375px;
           height: 245px;
-          top: 336px;
         }
 
         .middle-content-heading {
@@ -252,8 +226,9 @@
         .footer {
           flex-direction: column;
           align-items: center;
-          padding-bottom: 10px;
-          /* padding-left: 5%; */
+          justify-content: center;
+          display: flex;
+          gap: 20px;
         }
         .footer-containers-subtext-1 {
           font-family: SamsungOne;
@@ -271,7 +246,7 @@
         }
 
         .footer-containers {
-          width: 100%;
+          width: 70%;
         }
 
         .footer-images img {
@@ -279,14 +254,14 @@
           height: 25px;
         }
       }
-      @media screen and (min-width: 2560px) {
+      @media screen and (min-width: 3840px) {
         .main-container {
-          /* max-width: 70%; */
+          max-width: 3840px;
           margin: auto;
         }
 
         .middle-content {
-          max-width: 80%;
+          max-width: 3840px;
           gap: 60px;
         }
 
@@ -331,14 +306,16 @@
   </head>
   <body>
     <header class="header">
-      <img
-        class="samsung-logo"
-        alt="samsung-logo"
-        src="https://s3-alpha-sig.figma.com/img/4006/c707/0574268d9682c51a43d3a9ae55828d46?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=L35hUtchIfejYDq311IT6TE5ITZCQTJqUkTo0BIC2YjGUJVWsTgZyOYF0QvTPoIOitBIcWjrLKXkQjWvHgHVAzrPz-deifFaPKkImuMc~eF6FscWCEj1QUUlTQyWmF7zaKqhOOSbJTOL2jpuX3vZdkLuGAe-AKmeqszvczNSUcokLEKx6c2yWwZKVmW1nMFBxiaO0NQ7JPHTP5nm5dSB5jrHGYJ3kPDuQNYJ0mItdf~D4mztNz7bFGVpai2MWIreudlIN3Ki-Jq5OCOd24-EVI46oJhG1RTk48ksZngou8aetmUbtZ8V55fqKeJ~oDs6LPeXwe4b3t5QvsOodLiJuA__"
-      />
+      <div class="samsung-logo-p">
+        <img
+          class="samsung-logo"
+          alt="samsung-logo"
+          src="https://s3-alpha-sig.figma.com/img/4006/c707/0574268d9682c51a43d3a9ae55828d46?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=L35hUtchIfejYDq311IT6TE5ITZCQTJqUkTo0BIC2YjGUJVWsTgZyOYF0QvTPoIOitBIcWjrLKXkQjWvHgHVAzrPz-deifFaPKkImuMc~eF6FscWCEj1QUUlTQyWmF7zaKqhOOSbJTOL2jpuX3vZdkLuGAe-AKmeqszvczNSUcokLEKx6c2yWwZKVmW1nMFBxiaO0NQ7JPHTP5nm5dSB5jrHGYJ3kPDuQNYJ0mItdf~D4mztNz7bFGVpai2MWIreudlIN3Ki-Jq5OCOd24-EVI46oJhG1RTk48ksZngou8aetmUbtZ8V55fqKeJ~oDs6LPeXwe4b3t5QvsOodLiJuA__"
+        />
+      </div>
     </header>
 
-    <div class="main-container">
+    <main class="main-container">
       <div class="macif-logo">
         <img
           class="macif-logo-image"
@@ -365,62 +342,62 @@
           />
         </div>
       </div>
+    </main>
 
-      <footer class="footer">
-        <div class="footer-containers">
-          <div class="footer-images">
-            <img
-              src="https://optiabtests.s3.eu-west-2.amazonaws.com/Training+assignments/icon1.svg"
-              alt="truck-image"
-            />
-          </div>
-          <p class="footer-containers-subtext-1">
-            Livraison et retours gratuits <br />
-            <span class="footer-containers-subtext-2">sous 14 jours</span>
-          </p>
+    <footer class="footer">
+      <div class="footer-containers">
+        <div class="footer-images">
+          <img
+            src="https://optiabtests.s3.eu-west-2.amazonaws.com/Training+assignments/icon1.svg"
+            alt="truck-image"
+          />
         </div>
+        <p class="footer-containers-subtext-1">
+          Livraison et retours gratuits <br />
+          <span class="footer-containers-subtext-2">sous 14 jours</span>
+        </p>
+      </div>
 
-        <div class="footer-containers">
-          <div class="footer-images">
-            <img
-              src="https://optiabtests.s3.eu-west-2.amazonaws.com/Training+assignments/icon2.svg"
-              alt="warranty-image"
-            />
-          </div>
-          <p class="footer-containers-subtext-1">
-            Garantie 2 ans <br />
-            <span class="footer-containers-subtext-2">incluse</span>
-          </p>
+      <div class="footer-containers">
+        <div class="footer-images">
+          <img
+            src="https://optiabtests.s3.eu-west-2.amazonaws.com/Training+assignments/icon2.svg"
+            alt="warranty-image"
+          />
         </div>
+        <p class="footer-containers-subtext-1">
+          Garantie 2 ans <br />
+          <span class="footer-containers-subtext-2">incluse</span>
+        </p>
+      </div>
 
-        <div class="footer-containers">
-          <div class="footer-images">
-            <img
-              src="https://optiabtests.s3.eu-west-2.amazonaws.com/Training+assignments/icon3.svg"
-              alt="payment-image"
-            />
-          </div>
-          <p class="footer-containers-subtext-1">
-            Paiement en 3 ou 4 fois <br />
-            <span class="footer-containers-subtext-2">Sans frais</span>
-          </p>
+      <div class="footer-containers">
+        <div class="footer-images">
+          <img
+            src="https://optiabtests.s3.eu-west-2.amazonaws.com/Training+assignments/icon3.svg"
+            alt="payment-image"
+          />
         </div>
+        <p class="footer-containers-subtext-1">
+          Paiement en 3 ou 4 fois <br />
+          <span class="footer-containers-subtext-2">Sans frais</span>
+        </p>
+      </div>
 
-        <div class="footer-containers">
-          <div class="footer-images">
-            <img
-              src="https://optiabtests.s3.eu-west-2.amazonaws.com/Training+assignments/icon4.svg"
-              alt="customer-service-image"
-            />
-          </div>
-          <p class="footer-containers-subtext-1">
-            Service client : 0 805 504 504 <br />
-            <span class="footer-containers-subtext-2"
-              >Du lundi au samedi de 9h à 20h</span
-            >
-          </p>
+      <div class="footer-containers">
+        <div class="footer-images">
+          <img
+            src="https://optiabtests.s3.eu-west-2.amazonaws.com/Training+assignments/icon4.svg"
+            alt="customer-service-image"
+          />
         </div>
-      </footer>
-    </div>
+        <p class="footer-containers-subtext-1">
+          Service client : 0 805 504 504 <br />
+          <span class="footer-containers-subtext-2"
+            >Du lundi au samedi de 9h à 20h</span
+          >
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
