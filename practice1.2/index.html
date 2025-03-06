@@ -40,9 +40,15 @@
       .cta-button:hover {
         background-color: #0056b3;
       }
+      #popup.active,
+      #overlayPopup.active {
+        visibility: visible;
+        opacity: 1;
+      }
 
       .popup {
-        display: block;
+        opacity: 0;
+        visibility: hidden;
         position: fixed;
         top: 50%;
         left: 50%;
@@ -57,10 +63,9 @@
       }
 
       .overlay {
-        display: block;
+        visibility: hidden;
         position: fixed;
-        top: 0;
-        left: 0;
+
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.8);
@@ -201,7 +206,7 @@
       @media (max-width: 767px) {
         .popup {
           width: 90%;
-          height: 95%;
+
           max-width: 340px;
           border-radius: 12px;
           overflow-y: auto;
@@ -230,7 +235,7 @@
         }
 
         .popup-text {
-          padding: 20px 20px 30px;
+          padding: 20px 10px 30px;
           gap: 15px;
         }
 
@@ -275,10 +280,6 @@
           font-size: 16px;
           margin-top: 10px;
         }
-        /* 
-  .button {
-    margin-top: px;
-  } */
 
         .login-text {
           margin-top: 10px;
@@ -286,8 +287,6 @@
         }
 
         .close-btn {
-          top: 10px;
-          right: 10px;
           font-size: 20px;
         }
       }
@@ -295,12 +294,12 @@
     <title>Mable</title>
   </head>
   <body>
-    <button class="cta-button" onclick="openPopup()">Click Me</button>
+    <button class="cta-button" id="popupButtonOpen">Click Me</button>
 
-    <div class="overlay" id="overlay" onclick="closePopup()"></div>
+    <div class="overlay" id="overlayPopup"></div>
 
     <div class="popup" id="popup">
-      <button class="close-btn" onclick="closePopup()">×</button>
+      <button class="close-btn" id="popupButtonClose">×</button>
 
       <div class="popup-container">
         <div class="popup-image">
@@ -379,14 +378,24 @@
 
     <script>
       function openPopup() {
-        document.getElementById("popup").style.display = "block";
-        document.getElementById("overlay").style.display = "block";
+        document.getElementById("popup").classList.add("active");
+        document.getElementById("overlayPopup").classList.add("active");
       }
 
       function closePopup() {
-        document.getElementById("popup").style.display = "none";
-        document.getElementById("overlay").style.display = "none";
+        document.getElementById("popup").classList.remove("active");
+        document.getElementById("overlayPopup").classList.remove("active");
       }
+
+      const openButton = document.getElementById("popupButtonOpen");
+      openButton.addEventListener("click", openPopup);
+
+      const closeButton = document.getElementById("popupButtonClose");
+      closeButton.addEventListener("click", closePopup);
+
+      document
+        .getElementById("overlayPopup")
+        .addEventListener("click", closePopup);
     </script>
   </body>
 </html>
