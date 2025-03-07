@@ -377,25 +377,19 @@
     </div>
 
     <script>
-      function openPopup() {
-        document.getElementById("popup").classList.add("active");
-        document.getElementById("overlayPopup").classList.add("active");
-      }
+      document.addEventListener("click", function (event) {
+        const target = event.target;
 
-      function closePopup() {
-        document.getElementById("popup").classList.remove("active");
-        document.getElementById("overlayPopup").classList.remove("active");
-      }
+        if (target.id === "popupButtonOpen") {
+          document.getElementById("popup").classList.add("active");
+          document.getElementById("overlayPopup").classList.add("active");
+        }
 
-      const openButton = document.getElementById("popupButtonOpen");
-      openButton.addEventListener("click", openPopup);
-
-      const closeButton = document.getElementById("popupButtonClose");
-      closeButton.addEventListener("click", closePopup);
-
-      document
-        .getElementById("overlayPopup")
-        .addEventListener("click", closePopup);
+        if (target.id === "popupButtonClose" || target.id === "overlayPopup") {
+          document.getElementById("popup").classList.remove("active");
+          document.getElementById("overlayPopup").classList.remove("active");
+        }
+      });
     </script>
   </body>
 </html>
