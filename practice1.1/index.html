@@ -30,6 +30,7 @@
         border-bottom: 1px solid #dddddd;
         display: flex;
         justify-content: center;
+        padding: 10px 0;
       }
 
       .samsung-logo {
@@ -38,12 +39,16 @@
       }
 
       .main-container {
-        width: 1440px;
+        width: 100%;
         margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
       .macif-logo {
         text-align: center;
+        margin-top: 20px;
       }
 
       .macif-logo-image {
@@ -63,26 +68,28 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
-        margin: auto;
-        max-width: 1440px;
-        gap: 40px;
+        width: 100%;
+        /* max-width: 1440px; */
       }
 
       .text-content-left-1 {
         flex: 1;
-        padding-left: 4%;
+        display: flex;
+        padding-left: 7%;
+        flex-direction: column;
+        justify-content: center;
       }
 
       .middle-content-heading {
         font-weight: 700;
         font-size: 24px;
+        margin-bottom: 10px;
       }
 
       .middle-content-text {
         font-family: "SamsungOne", sans-serif;
         font-size: 18px;
-        margin: 10px 0;
+        margin-bottom: 20px;
       }
 
       .button {
@@ -95,6 +102,7 @@
         cursor: pointer;
         font-size: 16px;
         font-weight: bold;
+        text-transform: uppercase;
       }
 
       .button:hover {
@@ -103,32 +111,31 @@
 
       .samsung-logo-container {
         flex: 1;
-        text-align: right;
+        display: flex;
+        justify-content: right;
+        align-items: center;
       }
 
       .product-images {
         width: 456px;
-        height: 352px;
-
-        justify-content: right;
+        max-width: 100%;
+        height: auto;
       }
 
       .footer {
         background-color: #f4f4f4;
         width: 100%;
-        padding-top: 20px;
-        display: flex;
         padding: 20px;
+        display: flex;
         justify-content: center;
+        margin-top: 30px;
       }
 
       .footer-containers {
         display: flex;
         align-items: center;
-        text-align: center;
         width: 22%;
         gap: 3%;
-
         flex-direction: row;
         text-align: left;
       }
@@ -142,7 +149,6 @@
         font-weight: 700;
         font-size: 16px;
         font-family: SamsungOne;
-
         line-height: 18.75px;
         letter-spacing: 0%;
       }
@@ -153,17 +159,12 @@
         font-size: 16px;
         line-height: 18.75px;
         letter-spacing: 0%;
-
         font-size: 14px;
       }
 
       @media screen and (max-width: 1080px) {
-        .main-container {
-          max-width: 75%;
-        }
-
         .middle-content {
-          max-width: 75%;
+          max-width: 100%;
         }
       }
 
@@ -176,6 +177,7 @@
 
         .text-content-left-1 {
           padding: 10px;
+          align-items: center;
         }
 
         .middle-content-heading {
@@ -189,6 +191,42 @@
         .button {
           width: 80%;
         }
+
+        .samsung-logo-container {
+          justify-content: center;
+          margin-top: 20px;
+        }
+
+        .footer {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+          gap: 20px;
+        }
+        .footer-containers-subtext-1 {
+          font-family: SamsungOne;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 16.41px;
+          letter-spacing: 0%;
+        }
+        .footer-containers-subtext-2 {
+          font-family: SamsungOne;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 16.41px;
+          letter-spacing: 0%;
+        }
+
+        .footer-containers {
+          width: 70%;
+        }
+
+        .footer-images img {
+          width: 25px;
+          height: 25px;
+        }
       }
 
       @media screen and (max-width: 480px) {
@@ -200,8 +238,9 @@
           height: 41px;
         }
         .product-images {
-          width: 374.8148193359375px;
-          height: 245px;
+          width: 100%;
+          max-width: 374px;
+          height: auto;
         }
 
         .middle-content-heading {
@@ -209,8 +248,7 @@
           font-weight: 700;
           font-size: 20px;
           line-height: 25.16px;
-          width: 297px;
-
+          max-width: 297px;
           letter-spacing: 0%;
         }
 
@@ -257,11 +295,10 @@
       @media screen and (min-width: 3840px) {
         .main-container {
           max-width: 3840px;
-          margin: auto;
         }
 
         .middle-content {
-          max-width: 3840px;
+          max-width: 2000px;
           gap: 60px;
         }
 
@@ -285,7 +322,6 @@
         }
 
         .footer {
-          /* padding: 50px; */
           margin: 1%;
         }
 
@@ -302,7 +338,7 @@
         }
       }
     </style>
-    <title>Document</title>
+    <title>Samsung Macif Avantages</title>
   </head>
   <body>
     <header class="header">
@@ -332,7 +368,7 @@
             10% de remise sur les produits Samsung
           </h2>
           <p class="middle-content-text">Connectez-vous pour en profiter !</p>
-          <button class="button">SE CONNECTER</button>
+          <button class="button">Se connecter</button>
         </div>
         <div class="samsung-logo-container">
           <img
